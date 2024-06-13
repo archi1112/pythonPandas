@@ -8,8 +8,10 @@ import numpy as np
 5.ones()-fill with ones
 6.full()-fill with a particular value
 7.empty()-creates empty array with random/garbage values
-8.arrange()-create array starting from a number to partcular value with a skip
-
+8.arange()-create array starting from a number to partcular value with a skip
+9.Difference in list and numpy array 
+    ->multiplication
+    ->addition
 """
 if __name__ == "__main__":
     a = np.array([
@@ -42,6 +44,7 @@ if __name__ == "__main__":
     """
    numpy array filling
    """
+
     d = np.full((2, 3), 4)
     print(d)
 
@@ -57,4 +60,43 @@ if __name__ == "__main__":
     print(emptyArray)
 
     # prints number from 0 to 100 with a skip of two
-    values = np.arrange(0, 100, 2)
+    values = np.arange(0, 100, 2)
+
+# ===============================================================
+# Mathematical operations
+"""
+1.Difference in list and numpy array (on list only addition is possible it concatenates two lists , 
+other operators are not valid on the lists)
+"""
+
+listExample = [1, 2, 3, 4, 5]
+numpyExample = np.array([1, 2, 3, 4, 5])
+
+print(listExample * 3)  #prints [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+print(numpyExample * 3)  #prints array multiplying each element by 3
+
+# addition
+print("addition")
+print(listExample + listExample)  #concatenates two lists [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+print(numpyExample + numpyExample)  #add each element od two lists [ 2  4  6  8 10]
+
+#subtraction
+print("subtraction")
+# print(listExample - listExample)  #subtraction operator is not valid for lists will give error
+print(numpyExample - numpyExample)  #subtract each element of two lists
+
+# multiplication
+print("multiplication")
+# print(listExample * listExample)  # can't multiply sequence by non-int of type 'list'
+print(numpyExample * numpyExample)
+
+# division
+print("division")
+# print(listExample / listExample)  #unsupported operand
+print(numpyExample / numpyExample)
+
+# sqrt
+print(np.sqrt(numpyExample))
+
+# log
+print(np.log2(numpyExample))
